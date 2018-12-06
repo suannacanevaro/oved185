@@ -25,28 +25,33 @@ public class Cage<T extends Animal> {
 	}
 
 	public boolean add(T animal) {
-		if(max == guests.size()) {
+		// TODO: reject duplicated names
+		if (max == guests.size()) {
 			return false;
 		}
 		guests.add(animal);
 		return true;
 	}
-	
+
 	public Optional<T> remove(String name) {
+		// TODO: direct access to guest
 		Iterator<T> it = guests.iterator();
-		while(it.hasNext()) {
+		while (it.hasNext()) {
 			T animal = it.next();
-			if(animal.getName().equals(name)) {
+			if (animal.getName().equals(name)) {
 				guests.remove(animal);
 				return Optional.of(animal);
 			}
 		}
-		
+
 		return Optional.empty();
 	}
 
+	// TODO: check animal in cage?
+//	boolean isPresent(String name);
+
 	@Override
 	public String toString() {
-		return "{Cage " + id + ": " + guests + "}";  
+		return "{Cage " + id + ": " + guests + "}";
 	}
 }
