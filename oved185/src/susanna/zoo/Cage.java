@@ -30,6 +30,7 @@ public int getId() {
 }
  
 public boolean add(T animal) { //non serve controllare di non inserire due animali con lo stesso nome perchè tanto nel set non possono esserci due elementi uguali
+	// TODO: reject duplicated name
 	if(max == guests.size()) {
 		return false;
 	}
@@ -39,6 +40,7 @@ public boolean add(T animal) { //non serve controllare di non inserire due anima
 
 public Optional<T> remuve(String name) {
 	Iterator<T> it = guests.iterator();
+	// TODO: 
 	while(it.hasNext()) { //l'iteratore continua fin quando ho un successore nella mia sequenza
 		T animal = it.next();
 		if(animal.getName().equals(name)) {
@@ -47,6 +49,7 @@ public Optional<T> remuve(String name) {
 	}
 	return Optional.empty();
 }
+// TODO:
   @Override
 	public String toString() {
 		return "{ Cage" + id + ": " + guests + "}" ; 
